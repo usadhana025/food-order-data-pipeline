@@ -31,5 +31,13 @@ It simulates order events flowing through a streaming pipeline:
 ## How to Run
 
 ### 1. Start Kafka
-```bash
 docker compose up -d
+### 2. Initialize the database
+python3 init_db.py
+### 3. Start the consumer
+python3 consumer.py
+### 4. Start the producer
+python3 producer.py
+### 5. Start the dashboard
+streamlit run dashboard.py
+```bash

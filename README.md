@@ -1,8 +1,35 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2821
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+# Real-Time Food Order Data Pipeline
 
-\f0\fs24 \cf0 Ghbjbjbj}
+## Overview
+This project is a small end-to-end real-time data engineering POC for a food delivery order tracking use case.
+
+It simulates order events flowing through a streaming pipeline:
+
+**Producer → Kafka → Consumer → SQLite → Streamlit Dashboard**
+
+## Architecture
+- **Producer**: Simulates food order events
+- **Kafka**: Ingests and stores streaming events
+- **Consumer**: Reads events, applies transformations, and writes processed data
+- **SQLite**: Acts as the serving layer
+- **Streamlit**: Displays live order and revenue metrics
+
+## Tech Stack
+- Python
+- Apache Kafka
+- SQLite
+- Streamlit
+- Docker
+
+## Features
+- Real-time order event ingestion
+- Kafka-based event streaming
+- Continuous consumer processing
+- Idempotent storage using primary key + insert/replace
+- Live dashboard for order tracking and metrics
+
+## How to Run
+
+### 1. Start Kafka
+```bash
+docker compose up -d
